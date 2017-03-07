@@ -10,7 +10,9 @@ addpath('NIfTI_20140122/')
 % the LIBSVM toolbox
 unzip libsvm-master.zip;
 cd libsvm-master/matlab/;
+fprintf('MEX... \n');
 make;
+fprintf('\n');
 cd ../../;
 addpath(genpath('libsvm-master/'));
 
