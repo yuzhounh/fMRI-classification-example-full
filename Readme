@@ -3,7 +3,8 @@ Copyright (C) 2017 Jing Wang
 
 Reproduced from Poldrack's repository. Different from 
     https://github.com/yuzhounh/fMRI-classification-example, 
-the toolboxes and fMRI data are uploaded on the current repository. 
+the toolboxes and fMRI data are uploaded on the current repository so that 
+you do not need to download them.
 
 Data and toolboxes:
 NIFTI, http://www.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image
