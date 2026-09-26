@@ -1,23 +1,50 @@
-A demo of pattern classification with fMRI data.
-Copyright (C) 2017 Jing Wang
+# fMRI Classification Example — Full
 
-Reproduced from Poldrack's repository. Different from 
-    https://github.com/yuzhounh/fMRI-classification-example, 
-the toolboxes and fMRI data are uploaded on the current repository. It 
-could avoid the problems that might occur when downloading the toolboxes 
-and fMRI data by commands. 
+A MATLAB demonstration of fMRI pattern classification, with the example data and toolbox archives included.
 
-Data and toolboxes:
-NIFTI, http://www.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image
-Libsvm, http://www.csie.ntu.edu.tw/~cjlin/libsvm/ or https://github.com/cjlin1/libsvm
-fMRI data, https://github.com/poldrack/fmri-classification-example
+[GPL-3.0 license](LICENSE)
 
-Usage:
-Run FCE.m to play the demo. Read the Notes file for problems. 
+This example reproduces the workflow from [Poldrack's fMRI classification example](https://github.com/poldrack/fmri-classification-example). It classifies n-back task data with a linear SVM and compares original and shuffled labels.
 
-Contact information:
-Jing Wang
-wangjing0@seu.edu.cn
-yuzhounh@163.com
+## Quick Start
 
-2017-3-7 16:25:11
+1. Open the repository directory in MATLAB.
+2. Configure a supported C++ compiler for LIBSVM's MATLAB interface:
+
+```matlab
+mex -setup c++
+FCE
+```
+
+[FCE.m](FCE.m) runs preparation followed by classification. Preparation extracts the included NIfTI and LIBSVM archives, builds LIBSVM's MEX files, and decompresses the included fMRI images. Run it in the repository directory so its relative paths resolve.
+
+The [original environment notes](Notes) record MATLAB R2015b, LIBSVM 3.22, and NIfTI tools dated 22 January 2014. These are historical versions, not a verified compatibility range for current installations.
+
+## Repository Structure
+
+- [FCE.m](FCE.m): entry point.
+- [FCE_prepare.m](FCE_prepare.m): archive extraction, LIBSVM compilation, and image preparation.
+- [FCE_classify.m](FCE_classify.m): classification and label-shuffling comparison.
+- [FCE_nii2x.m](FCE_nii2x.m): conversion of NIfTI images into classifier input.
+- [fmri-classification-example-master/](fmri-classification-example-master/): bundled images and the original Python notebook.
+- [NIfTI_20140122.zip](NIfTI_20140122.zip) and [libsvm-master.zip](libsvm-master.zip): toolbox archives.
+- [Notes](Notes): historical environment and compiler troubleshooting.
+
+The [nested README](fmri-classification-example-master/README.md) describes the original Python notebook; the MATLAB entry point for this repository is `FCE.m`.
+
+## Related Projects
+
+- [fMRI-classification-example](https://github.com/yuzhounh/fMRI-classification-example): the related version linked by the original documentation.
+- [Poldrack's original example](https://github.com/poldrack/fmri-classification-example): source of the example workflow and data.
+- [LIBSVM](https://github.com/cjlin1/libsvm): SVM implementation.
+
+## License
+
+See the existing [GNU General Public License, version 3](LICENSE). Retain the notices in the source files and in bundled third-party material.
+
+## Contact
+
+Jing Wang · [wangjing0@seu.edu.cn](mailto:wangjing0@seu.edu.cn) · [yuzhounh@163.com](mailto:yuzhounh@163.com)
+
+Copyright (C) 2017 Jing Wang.
+
